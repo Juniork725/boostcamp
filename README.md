@@ -6,5 +6,6 @@
 
 ### 2. 학습 내용  
 >   [Week 1: Python, AI Math](https://github.com/Juniork725/boostcamp/blob/main/study/week1.md)
+>   [Week 2: PyTorch](https://github.com/Juniork725/boostcamp/blob/main/study/week2.md)
 
 ### 3. 프로젝트
