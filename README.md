@@ -10,3 +10,4 @@
 >   [Week 3: DL Basic, Data Visualization](https://github.com/Juniork725/boostcamp/blob/main/study/week3.md)
 
 ### 3. 프로젝트
+>   [Toy: Basic Model](https://github.com/Juniork725/boostcamp/tree/main/projects/basic_model)
