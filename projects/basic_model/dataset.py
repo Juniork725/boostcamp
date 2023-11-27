@@ -19,6 +19,7 @@ class IrisDataset(torch.utils.data.Dataset):
     
     def __getitem__(self,idx):
         record = self.df.iloc[idx]
+        # line 9에서 np.float32로 type을 바꿔준 후 torch.float로 다시 type을 바꿔줘야 함. 개선 가능한가?
         x = torch.tensor(record.iloc[:][:-1]).type(torch.float)
         y = torch.tensor([0.03, 0.03, 0.03])
         y[['Iris-setosa', 'Iris-versicolor', 'Iris-virginica'].index(record.iloc[:][-1])] += 0.91
