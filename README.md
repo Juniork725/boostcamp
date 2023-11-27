@@ -7,7 +7,7 @@
 ### 2. 학습 내용  
 >   [Week 1: Python, AI Math](https://github.com/Juniork725/boostcamp/blob/main/study/week1.md)  
 >   [Week 2: PyTorch](https://github.com/Juniork725/boostcamp/blob/main/study/week2.md)  
->   [Week 3: DL Basic, Data Visualization](https://github.com/Juniork725/boostcamp/blob/main/study/week3.md)
+>   [Week 3: DL Basic, Data Visualization](https://github.com/Juniork725/boostcamp/blob/main/study/week3.md)  
 >   [Week 4: RecSys 이론, Data Visualization(2)](https://github.com/Juniork725/boostcamp/blob/main/study/week4.md)
 
 ### 3. 프로젝트
