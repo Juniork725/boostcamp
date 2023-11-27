@@ -14,6 +14,7 @@ def main():
     train_loss, train_acc, test_loss, test_acc = [], [], [], []
 
     for epoch in range(50):
+        # Train
         loss_sum, acc_sum = 0, 0
         for x, y in IrisTrainDataLoader:
             y_ = Model(x)
@@ -29,6 +30,7 @@ def main():
         train_loss.append(loss_sum/(120/8))
         train_acc.append(acc_sum/120)
 
+        # Test
         loss_sum, acc_sum = 0,0
         with torch.no_grad():
             for x, y in IrisTestDataLoader:
@@ -42,9 +44,11 @@ def main():
         test_loss.append(loss_sum/(30//8))
         test_acc.append(acc_sum/30)
 
+        # Print Loss and Accuracy
         if epoch%10 == 0:
             print(f"[Epochs]:{epoch}\n[Train Loss]:{train_loss[-1]}, [Train Accuracy]:{train_acc[-1]}\n[Test Loss]:{test_loss[-1]}, [Test Accuracy]:{test_acc[-1]}")
 
+    # Print Label and Prediction
     with torch.no_grad():
         x, y = next(iter(IrisTestDataLoader))
         y_ = Model(x)
@@ -55,6 +59,7 @@ def main():
         print(y)
         print(y_)
 
+    # Save Fig.
     fig, axes = plt.subplots(1,2)
     for i, value in enumerate(['Loss', 'Accuracy']):
         axes[i].set_title(value)
