@@ -1,4 +1,4 @@
-Week 3 (11/20 ~ 11/24)
+Week 4 (11/27 ~ 12/01)
 ===
 >  ##### 주간 요약
 >  RecSys Metrics, CF, MF, NCF, AutoRec 등 추천 시스템의 기초에 대해 배웠다.  
