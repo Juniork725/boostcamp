@@ -68,3 +68,39 @@ Day 22 (12/5)
 >  오늘의 답변 횟수: 0
 
 + ##### 키워드: Github, 구인구팀
+
+Day 23 (12/6)
+---
+오늘은 CTR 예측을 위한 딥러닝 모델들과 Multi-Armed Bandit에 대해 배웠다.  
+첫 모델은 Wide & Deep으로, memorization을 담당하는 Wide component와 generalization을 담당하는 Deep component를 결합하여 구성된다.  
+이 때 wide와 deep component의 입력값이 다르고, wide component에서 feature engineering이 필요하다.  
+이를 개선한 모델이 DeepFM 모델로, wide component를 FM으로 대체한 모델이다.  
+FM component는 low-order interaction에 효과적이고, Deep component는 high-order interaction에 효과적이다.  
+
+Deep Interest Network(DIN)는 user behavior feature를 처음 사용한 모델이다.  
+기존 딥러닝 기반 모델들은 사용자의 다양한 관심사를 반영하기 어려웠다.  
+반면 DIN은 유저가 기존에 소비한 아이템 리스트를 user behavior feature로 만들어 반영할 수 있다.  
+Transformer의 attention과 유사한 Local Activation이라는 layer를 통해 소비한 아이템들과 후보 아이템간의 연관성을 계산하고, 이를 이용해 아이템 임베딩을 가중합한다.  
+
+Behavior Sequence Transformer(BST)는 여기서 더 나아가 아이템 소비 이력을 sequential data로 간주해 순서까지 고려한다.  
+DIN이 attention과 유사한 부분을 갖고 있다면, BST는 Transformer와 동일하게 multi-head self attention, add & norm, FFN 레이어를 모두 갖는다.  
+
+Multi-Armed Bandit(MAB)은 각 아이템들을 하나의 슬롯 머신처럼 생각하고, 각 슬롯 머신마다 보상이 나올 확률이 정해져있다는 가정을 활용한다.  
+이 때 어떤 슬롯 머신을 얼마나 많이 당겨야 보상을 최대화할 수 있는지에 대한 방법론이 MAB이다.  
+가장 단순한 Greedy Algorithm, 랜덤성을 추가한 Epsilon-Greedy Algorithm, 기댓값에 신뢰도를 추가한 Upper Confidence Bound 등이 있다.  
+좀 더 발전된 방법론으로는 베타 분포를 실시간으로 갱신해 활용하는 Thompson Sampling, 아이템을 선택할 때의 context vector를 활용하는 LinUCB 등이 있다.  
+
+강의를 듣고 피어세션 때는 과제에 대해 질문 교환을 하고, 내일 스터디를 어떻게 할지 논의했다.  
+한 주제로 스터디를 고정하기보다는 각자 공부하고 싶은 내용을 자유롭게 공부하고, 피어세션 때 간단히 공부한 내용을 설명하는 식으로 진행하게 됐다.  
+
+피어세션 후에 멘토링 시간에는 CS 공부나 코테 준비는 어느 정도나 해야 할지, Front-end와 Back-end 능력은 얼마나 중요할지 등에 대해 들었다.  
+CS는 네트워크 같은 분야보다는 자료구조 등 AI 개발과 관련된 분야를 위주로 공부하는 게 좋을 듯하고, FE나 BE 역시 상대적으로 AI 개발 능력에 비해 우선도가 낮은 듯하다.  
+프로젝트 주제 선정에 대해서도 말씀하셨는데, 프로젝트 기획 의도가 무엇인지, 프로젝트를 진행할 때 데이터 처리나 모델 선정 등은 어떻게 할지 등을 고려해야 한다고 하셨다.  
+특히 모델을 구현할 때 복잡하고 세련된 모델보다는 간단한 모델이라도 어떻게 서비스에 맞게 개량하는지가 더 중요하다.  
+그리고 내가 생각했던 당뇨 환자 메뉴 추천 프로젝트도 코멘트를 간단히 받았는데, 데이터를 구하기가 어렵고 ML로 잘 해결할 수 있는 문제가 아닐 것 같다고 부정적인 의견을 주셨다.  
+주제에 대해서는 좀 더 고민을 해 봐야 할 듯하다.  
+
+>  오늘의 질문 횟수: 3
+>  오늘의 답변 횟수: 3
+
++ ##### 키워드: Wide & Deep, DeepFM, DIN, BST, MAB
