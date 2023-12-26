@@ -16,6 +16,7 @@
 >   [Week 5: RecSys 이론(2)](https://github.com/Juniork725/boostcamp/blob/main/study/week5.md)  
 >   [Week 6: RecSys 기초 프로젝트(1)](https://github.com/Juniork725/boostcamp/blob/main/study/week6.md)  
 >   [Week 7: Recsys 기초 프로젝트(2)](https://github.com/Juniork725/boostcamp/blob/main/study/week7.md)  
+>   [Week 8: AI 서비스 개발 기초](https://github.com/Juniork725/boostcamp/blob/main/study/week8.md)  
 
 </div>
 </details>
