@@ -24,5 +24,5 @@
 
 
 ### 3. 프로젝트
->   [Toy: Basic Model](https://github.com/Juniork725/boostcamp/tree/main/projects/basic_model)
+>   [Toy: Basic Model](https://github.com/Juniork725/boostcamp/tree/main/projects/basic_model)  
 >   [Level 1: Book Rating Prediction](https://github.com/boostcampaitech6/level1-bookratingprediction-recsys-03)
