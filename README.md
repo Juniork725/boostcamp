@@ -21,7 +21,14 @@
 </div>
 </details>
 
+<details>
+<summary><b>Level 2</b></summary>
+<div markdown="1">
 
+>   [Week 9: DKT(1)](https://github.com/Juniork725/boostcamp/blob/main/study/week9.md)  
+
+</div>
+</details>
 
 ### 3. 프로젝트
 >   [Toy: Basic Model](https://github.com/Juniork725/boostcamp/tree/main/projects/basic_model)  
