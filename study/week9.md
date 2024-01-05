@@ -1,7 +1,9 @@
 Week 9 (01/03 ~ 01/05)
 ===
 >  ##### 주간 요약
->  
+>  Level 2 시작과 함께 DKT 프로젝트 대회가 시작되었다.  
+>  새로운 팀원들을 만나 인사하는 시간을 가졌다.  
+>  NLP 외의 분야에서 Transformer를 활용하는 법에 대해 배웠다.  
 
 Day 40 (01/03)
 ---
@@ -38,3 +40,34 @@ feature들을 모두 concat. 한 뒤 dense layer를 한 번 통과시키고 이 
 지난 프로젝트에서는 github를 제대로 활용하지 못해서 좀 아쉬웠는데, 이제는 최종 프로젝트까지 함께 할 팀이니까 미리 협업 방식을 잘 정리해두는 게 좋을 듯하다.  
 
 + ##### 키워드: 베이스라인 코드 해설, 협업 컨벤션
+
+Day 42 (01/05)
+---
+오늘은 NLP 문제가 아닐 때 transformer를 어떻게 활용하는지, transformer를 활용한 대회 solution에는 어떤 것들이 있는지, 그리고 feature engineering 아이디어로 활용할 만한 것들에 대해 배웠다.  
+
+정형 데이터를 transformer에 활용하려면, 각 feature들을 embedding 한 후 concat하여 특정 시점의 값으로 사용해야 한다.  
+예를 들어 t 시점의 정보에 대해, feature들을 embedding 후 concat 하고, 이렇게 얻어진 vector들을 여러 시점의 값들을 모아 transformer에 넣는 것이다.  
+이때 feature가 연속형이라면 단순히 linear layer를 거치면 되고, 범주형이라면 각 범주를 숫자로 labeling 후 embedding 해야 한다.  
+
+Transformer에서 sequence 길이를 L, embedding 차원을 d라고 하면 시간복잡도는 O(L**2 X d)가 된다.  
+일반적으로 sequence 길이가 길어질수록 transformer의 성능이 올라가지만, 시간복잡도와 메모리의 한계를 마주하게 된다고 한다.  
+다른 DKT 대회에서는 이 문제를 Last Query Transformer RNN이라는 방법을 통해 해결했는데, transformer에서 마지막 데이터의 query만을 사용하는 것이다.  
+원래는 모든 입력 데이터에 대해 query를 만들기에 query 행렬이 (L X d) 차원을 갖는데, 마지막 데이터의 query만 사용하면 (1 X d)가 된다.  
+이로 인해 시간복잡도도 O(L X d)로 줄어드는 효과를 갖는다.  
+마지막 query만을 쓰는 것은 각 sequence마다 마지막 문제의 정답을 맞추는 것을 목표로 하기 때문에, 마지막 문제와 다른 문제들과의 연관성만을 학습하면 된다고 판단했기 때문이라 한다.  
+한 가지 의아한 점은, output으로 기존 sequence와 같은 길이를 갖는 행렬을 반환하여 LSTM에 넘겨준다는 점인데, 여기서 왜 기존 sequence와 같은 길이가 되는지 잘 모르겠다.  
+원래 transformer의 구조를 생각하면 query가 1개이므로 output도 (1, batch size, hidden dimension)의 크기가 되어야 할 것이다.  
+
+Github에서 소스 코드를 찾아 읽어봤는데, skip connection을 할 때 차원이 복구되는 것 같다.  
+Attention을 취하기 전의 (seq_len, batch_size, hidden_dim) 크기의 tensor가 있고, attention 후에는 (1, batch_size, hidden_dim)의 형태가 될 것이다.  
+이 둘을 skip connection을 위해 더해주면 broadcasting에 의해 연산이 되고, 최종적으로 (seq_len, batch_size, hidden_dim)의 형태가 되는 것이다.  
+
+강의를 듣느라 프로젝트 관련해서는 아직 손을 못 대고 있는데, 데일리 스크럼과 피어세션을 통해 아이디어 공유를 위주로 진행 중이다.  
+Conv 1D나 MF 적용해보기, 대분류별로 모델을 따로 학습 후 앙상블 해 보기, 문제 복습 횟수를 feature로 만들어보기 등등 여러 아이디어를 제시했다.  
+그 중 '최근 데이터 외에 이전 데이터도 활용하기'라는 아이디어도 있었는데, t~t+n 시점의 데이터로 t+n+1 시점의 데이터를 예측하는 것이다.  
+현재 베이스라인 코드에는 가장 최근의 n개 데이터만으로 마지막 문제에 대한 정답 여부를 예측하는데, t를 옮기며 여러 데이터를 모두 활용하자는 아이디어였다.  
+나는 단순하게 t를 1씩 바꿔서 적용하는 것만을 생각했는데, 아이디어 공유 과정에서 비슷한 데이터를 너무 많이 학습하게 된다는 지적이 나왔다.  
+나도 그 의견에 동의해서 그럼 전체 시기의 데이터 중 n개를 sampling 해서 사용하면 데이터 증강 효과도 볼 수 있지 않을까? 라는 아이디어를 추가로 제시했다.  
+의견 공유를 하는 과정에서 아이디어가 발전되는 게 느껴져서 집단 지성의 장점을 체감할 수 있었다.  
+
++ ##### 키워드: Transformer 활용, Last Query Transformer RNN, 아이디어 공유
