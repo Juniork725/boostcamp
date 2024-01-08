@@ -26,6 +26,7 @@
 <div markdown="1">
 
 >   [Week 9: DKT(1)](https://github.com/Juniork725/boostcamp/blob/main/study/week9.md)  
+>   [Week 10: DKT(2)](https://github.com/Juniork725/boostcamp/blob/main/study/week10.md)  
 
 </div>
 </details>
