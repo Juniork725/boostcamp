@@ -28,3 +28,31 @@ branch 전략과 commit 컨벤션을 정하고, 이에 맞춰 이슈 템플릿�
 이를 교훈 삼아 이번 프로젝트에서는 본격적으로 프로젝트 작업을 하기 전에 협업 흐름을 먼저 신경 쓰고자 한다.  
 
 + ##### 키워드: Batch size, Learning rate, OOF Stacking, Github 활용
+
+Day 44(01/09)
+---
+오늘은 Graph 기반 모델에 대한 강의를 끝으로 이번 대회에 관련된 강의를 모두 수강했다.  
+Graph 구조 학습의 목표는 크게 3가지인데, Node classification, Graph classification, Link prediction으로 나뉜다.  
+이번 DKT 대회에 적용하자면 사용자와 문제들을 node로 간주하고, 문제를 맞혔다면 link가 있는 것으로 하여 link prediction 문제로 볼 수 있다.  
+이 때 활용할 수 있는 모델로는 이전에 배웠던 GCN이나 이를 발전시킨 GAT 등이 있다.  
+GCN이 주변 node들의 embedding을 message로 만들어 합하는 방식이라면, GAT는 두 node의 embedding을 하나의 가중치로 변환 후, 주변 node들의 embedding에 대해 가중합을 하는 방식이다.  
+두 embedding으로 가중치를 만드는 것이 attention 방식과 유사하다.  
+GCN이나 GAT와 같은 모델들은 layer를 쌓을수록 receptive field가 넓어지는 효과가 생기는데, 이게 지나치면 over-smoothing 현상이 발생한다.  
+이는 각 node들이 너무 넓은 영역의 정보들을 모아 서로 비슷해지는 현상을 말한다.  
+Over-smoothing을 방지하기 위해서는 node dropout, edge dropout, layer-wise edge dropout 등의 방법을 활용할 수 있다.  
+
+그러나 graph 기반 모델은 이번 DKT 대회처럼 시계열 데이터의 특성을 반영하지 못한다.  
+때문에 다른 시계열 모델에 비해 성능이 떨어지는데, 이를 만회하는 아이디어가 있다.  
+Graph 기반 모델로 각 사용자와 문제들에 대한 embedding을 학습한 후, 이를 transformer 등의 시계열 모델에 사용하는 것이다.  
+원래는 사용자와 문제에 대한 embedding이 랜덤한 값에서 시작해 학습되는데, 이를 graph 모델로 학습해서 사용하기 때문에 pre-trained model을 사용하는 것과 비슷한 효과가 생긴다.  
+굳이 graph 기반 모델이 아니더라도, MF로 학습하거나 FM으로 다른 feature들에 대한 embedding까지 학습하는 식으로 변형하는 것도 가능할 것 같다.  
+
+피어세션 때는 git branch가 잘 관리되고 있는지 점검하고 잘못된 부분을 수정했다.  
+잘못 생성된 branch를 내가 [git push origin -d "BRANCH_NAME"] 명령어로 삭제했는데, 다른 팀원들의 git graph에는 여전히 예전 branch가 남아있는 문제가 생겼다.  
+분명 github에서 확인해도 branch가 없는데, 다른 분들이 pull을 해도 여전히 예전 branch가 남아있었다.  
+이것저것 시도해보다가 [git fetch -p]와 같은 명령어로 해결했다. 찾아보니 --prune 이라는 옵션을 통해 원격 저장소에 없는 branch를 지워주는 명령어였다.  
+그 외에 가상환경에서 gpu가 인식이 되지 않는 문제를 발견하고, 이것이 torch 버전과 cuda 버전이 호환되지 않아 생기는 문제임을 알게 되어 torch 버전을 낮춰 해결하기도 했다.  
+
+아직 프로젝트 초반이라 작업 환경이나 협업 과정에서 여러 문제가 생기고 있는데, 그래도 하나씩 잘 해결하며 전진 중이다.  
+
++ ##### 키워드: GAT, Over-smoothing
