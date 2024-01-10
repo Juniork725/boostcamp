@@ -29,7 +29,7 @@ branch 전략과 commit 컨벤션을 정하고, 이에 맞춰 이슈 템플릿�
 
 + ##### 키워드: Batch size, Learning rate, OOF Stacking, Github 활용
 
-Day 44(01/09)
+Day 44 (01/09)
 ---
 오늘은 Graph 기반 모델에 대한 강의를 끝으로 이번 대회에 관련된 강의를 모두 수강했다.  
 Graph 구조 학습의 목표는 크게 3가지인데, Node classification, Graph classification, Link prediction으로 나뉜다.  
@@ -56,3 +56,19 @@ Graph 기반 모델로 각 사용자와 문제들에 대한 embedding을 학습�
 아직 프로젝트 초반이라 작업 환경이나 협업 과정에서 여러 문제가 생기고 있는데, 그래도 하나씩 잘 해결하며 전진 중이다.  
 
 + ##### 키워드: GAT, Over-smoothing
+
+Day 45 (01/10)
+---
+본격적인 modeling에 앞서 몇 가지 EDA를 진행하고, validation 방법을 변경하는 코드를 짰다.  
+데이터의 sparsity가 97% 정도로 나와, MF와 같은 collaborative filtering을 적용해볼만 하다고 생각했다.  
+그리고 한 유저당 푼 문제 수는 어느 정도인지, 한 문제당 푼 유저 수는 어느 정도인지 등도 확인했다.  
+유저 기준으로는 cold start 문제가 크게 없을 듯한데, test_data.csv에서 푼 유저 수가 1명인 문제들이 있었다.  
+때문에 MF를 적용한다면, train_data.csv와 test_data.csv를 모두 합친 후 train과 valid dataset을 나누는 게 좋을 듯하다.  
+
+그리고 EDA를 ipynb 파일로 진행하고, 해당 코드를 github로 공유하면 좋지 않을까 싶어서 피어세션 때 제안해봤다.  
+하지만 EDA를 할 때마다 branch를 파고, PR을 하는 것이 너무 번거롭다는 의견이 나와서 구글 공용 드라이브를 활용하기로 했다.  
+깃허브에 기록이 안 남는 게 조금 아쉽긴 한데, 번거롭다는 의견도 충분히 이해가 가서 의견을 따르기로 했다.  
+
+오늘로 프로젝트가 시작된지 1주일이 지났는데, 현재로서는 모델링보다 github 활용법이나 EDA 공유 방법 등 작업 환경을 가다듬는 것에 집중 중이다.  
+
++ ##### 키워드: EDA, Validation, 협업 컨벤션
