@@ -1,7 +1,10 @@
 Week 10 (01/08 ~ 01/12)
 ===
 >  ##### 주간 요약
->  
+>  OOF Stacking에 대해 배우고, 이를 프로젝트에 적용해보기로 계획했다.  
+>  Github 활용 컨벤션을 정하고, 조원들이 잘 활용할 수 있도록 이끌었다.  
+>  다중공선성에 대해 배웠다.  
+>  Cross Validation을 구현했다.  
 
 Day 43 (01/08)
 ---
@@ -94,3 +97,20 @@ github는 충분히 잘 활용하고 있다고 평가해주셨고, 추가적으�
 이번 프로젝트에서 제일 신경 쓴 부분이 github 활용이었는데, 좋은 평가를 받아서 뿌듯했다.  
 
 + ##### 키워드: 병결, RFE, 다중공선성, statsmodel, VIF, 조건 수
+
+Day 47 (01/12)
+---
+지금까지 작업하던 validation 개선 작업을 마무리했다.  
+최종적으로는 기존 train data와 test data를 합친 full train data를 만들고, 이에 대해 cross validation을 하도록 구현했다.  
+기존 코드가 하나의 데이터셋에 대해 하나의 모델을 학습시키고, state를 저장하는 방식이라 기존 사용성을 유지하면서 CV 기능을 어떻게 넣을지 좀 고민이 되었다.  
+결과적으로 5-fold CV 기준으로 train.py를 argument를 바꿔가며 총 5번 실행하는 방식으로 구현했다.  
+구현된 사용 방식이 마음에 안 들긴 했지만, 결과적으로 valid score와 LB score의 차이를 줄어들게 하는 효과는 거뒀다.  
+
+그런데 의외로 CV가 성능 자체에 큰 영향을 주지는 않았다.  
+나는 CV를 하면 모델 5개를 앙상블 한 효과가 생겨서 성능이 더 나아지지 않을까? 라고 생각했는데, 실제로 LB score가 높아지긴 했지만 random walk 수준이라 의미가 없었다.  
+그래도 지금 CV를 구현해두면 나중에 OOF Stacking에도 활용할 수 있을 것이기에 구현의 의의는 충분하다.  
+
+이번주까지는 조원들 모두 EDA, feature engineering, pipeline 수정, validation 등을 진행하느라 modeling은 거의 손을 대지 않았다.  
+다음주에는 오늘 구현한 CV를 main branch의 코드와 merge하는 과정에서 생긴 에러를 해결하고, data augmentation을 구현한 뒤에 MF-RNN 연결 모델을 만들 계획이다.  
+
++ ##### 키워드: Cross Validation
