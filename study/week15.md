@@ -36,3 +36,17 @@ loss가 자꾸 이상하게 나와서 debugging을 해 보니 모든 입력값�
 적당한 성능을 내서 앙상블에 활용하는 수준 정도를 목표로 해야겠다.  
 
 + ##### EASE 구현, 기울기 소실
+
+Day 68 (02/15)
+---
+어제 발생했던 기울기 소실 문제를 batch norm으로 해결했다.  
+그 외에 skip connection도 적용해보고자 모델의 CNN 구조를 resnet과 유사하게 변경해보고, ReLU도 넣어봤는데 성능 향상이 있지는 않았다.  
+처음에는 모델 구조의 복잡도에 비해 데이터의 수가 부족해서 그런가? 라는 생각이 들었는데, 생각해보니 label의 imbalance가 문제일 수도 있을 것 같다.  
+다른 조원 분이 Catboost를 돌려서 feature importance를 확인했을 때 user의 importance가 굉장히 높게 나왔다.  
+즉, 어떤 유저의 데이터인지만 알아도 label을 어느 정도 예측할 수 있다는 뜻이다.  
+영화를 많이 본 유저는 그냥 label을 1로 예측해도 높은 확률로 맞고, 그렇지 않은 유저도 label을 0으로 예측하면 높은 확률로 맞기 때문에 그럴 것이다.  
+그래서 내일은 positive sample에 대해 oversampling을 적용해 볼까 싶다.  
+사실 이상치 탐지와도 연관성이 있지 않을까? 라는 생각이 들어서 해당 분야에서는 어떻게 불균형을 해결하는지 찾아봤는데, 적용하려면 공부가 좀 필요할 것 같다.  
+그래서 우선은 positive sample을 negative sample과 비슷한 양으로 반복 추출하는 방안을 생각 중이다.  
+
++ ##### Skip Connection, Oversampling
