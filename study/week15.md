@@ -1,7 +1,8 @@
 Week 14 (02/13 ~ 02/16)
 ===
 >  ##### 주간 요약
->  
+>  CFM을 구현하고, 여러 방법론들을 도입해 성능을 개선해나가는 중이다.
+>  EASE 모델을 구현해 리더보드에서 좋은 성적을 냈다.  
 
 Day 66 (02/13)
 ---
@@ -50,3 +51,12 @@ Day 68 (02/15)
 그래서 우선은 positive sample을 negative sample과 비슷한 양으로 반복 추출하는 방안을 생각 중이다.  
 
 + ##### Skip Connection, Oversampling
+
+Day 69 (02/16)
+---
+어제 생각했던대로 관람수가 적은 유저에 대해 oversampling을 했더니 recall이 개선되었다.  
+원래는 이상치 탐지에서 주로 쓰이는 smote라는 방법을 적용하려 했으나, 현재 사용 중인 feature가 모두 범주형 데이터라 적용하지 못했다.  
+그래도 단순 반복 추출만으로도 user feature에 대한 의존도가 낮아져서인지 성능이 개선되긴 했다.  
+현재 다른 조원분이 catboost로 feature importance를 분석 중인데, 나중에 그 결과를 바탕으로 CFM에 사용할 feature를 추려내고, 연속형 데이터도 추가해 smote를 적용해볼까 싶다.  
+
++ ##### Oversampling, Smote
