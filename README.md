@@ -31,7 +31,8 @@
 >   [Week 12: DKT(4)](https://github.com/Juniork725/boostcamp/blob/main/study/week12.md)  
 >   [Week 13: Movie Rec(1)](https://github.com/Juniork725/boostcamp/blob/main/study/Week13.md)  
 >   [Week 14: Movie Rec(2)](https://github.com/Juniork725/boostcamp/blob/main/study/Week14.md)  
->   [Week 15: Movie Rec(3)](https://github.com/Juniork725/boostcamp/blob/main/study/week15.md)
+>   [Week 15: Movie Rec(3)](https://github.com/Juniork725/boostcamp/blob/main/study/week15.md)  
+>   [Week 16: Movie Rec(4)](https://github.com/Juniork725/boostcamp/blob/main/study/week16.md)
 
 </div>
 </details>
