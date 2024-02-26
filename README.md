@@ -41,7 +41,7 @@
 <summary><b>Level 3</b></summary>
 <div markdown="1">
 
->   [Week 17: Product Serving]
+>   [Week 17: Product Serving](https://github.com/Juniork725/boostcamp/blob/main/study/week17.md)
 
 </div>
 </details>
