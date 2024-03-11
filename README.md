@@ -42,7 +42,8 @@
 <div markdown="1">
 
 >   [Week 17: Product Serving(1)](https://github.com/Juniork725/boostcamp/blob/main/study/week17.md)  
->   [Week 18: Product Serving(2)](https://github.com/Juniork725/boostcamp/blob/main/study/week18.md)
+>   [Week 18: Product Serving(2)](https://github.com/Juniork725/boostcamp/blob/main/study/week18.md)  
+>   [Week 19: 최종 프로젝트(1)](https://github.com/Juniork725/boostcamp/blob/main/study/week19.md)
 
 </div>
 </details>
