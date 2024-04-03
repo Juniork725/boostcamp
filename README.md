@@ -55,4 +55,5 @@
 >   [Level 1: Book Rating Prediction](https://github.com/boostcampaitech6/level1-bookratingprediction-recsys-03)  
 >   [Level 2: DKT](https://github.com/boostcampaitech6/level2-dkt-recsys-07)  
 >   [Level 2: Movie Recommendation](https://github.com/boostcampaitech6/level2-movierecommendation-recsys-07)  
->   [Level 3: Steam Buddy](https://github.com/boostcampaitech6/level2-3-recsys-finalproject-recsys-07)
+>   [Level 3: Steam Buddy](https://github.com/boostcampaitech6/level2-3-recsys-finalproject-recsys-07)  
+>   [Level 3: Steam Buddy - 소개 페이지](https://fortune-lynx-07c.notion.site/STEAM-BUDDY-88723af746e3491a9298f27d2a10d186)
